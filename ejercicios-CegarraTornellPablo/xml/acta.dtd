@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT acta (calificacion+,diligencia*)> 
+	<!ELEMENT calificacion (nif,nombre?,nota)>
+	<!ELEMENT diligencia (nif,nombre?,nota)> 
+		<!ELEMENT nif (#PCDATA)> 
+		<!ELEMENT nombre (#PCDATA)>
+		<!ELEMENT nota (#PCDATA)>
+
+
+<!ATTLIST acta 
+	asignatura NMTOKEN #REQUIRED 
+	convocatoria (febrero|junio|julio) #REQUIRED>
+<!ATTLIST diligencia 
+	fecha CDATA #REQUIRED 
+	extraordinaria (si|no) "no">
