@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actividad id="1" xmlns="http://www.example.org/actividad"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/actividad actividad.xsd ">
+	<titulo>Prueba Actividad</titulo>
+	<descripcion>Ejercicio correspondiente a la semana 3</descripcion>
+	<profesor>Marcos Mernarguez</profesor>
+	<agenda>
+		<fecha>1997-02-02</fecha>
+		<turno>
+			<horario>15:00-16:00</horario>
+			<reserva>
+				<alumno>Pablo Cegarra</alumno>
+				<email>pablo.cegarrat@um.es</email>
+			</reserva>
+		</turno>
+		<turno>
+			<horario>16:00-17:00</horario>
+		</turno>
+		<turno>
+			<horario>17:00-18:00</horario>
+			<reserva>
+				<alumno>Marcos Menarguez</alumno>
+				<email>marcos@um.es</email>
+			</reserva>
+		</turno>
+	</agenda>
+	
+</actividad>

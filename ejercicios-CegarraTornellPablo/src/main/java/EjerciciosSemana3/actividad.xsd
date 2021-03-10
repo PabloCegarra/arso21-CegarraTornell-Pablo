@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/actividad"
+	xmlns:tns="http://www.example.org/actividad"
+	elementFormDefault="qualified">
+
+	<element name="actividad">
+		<complexType>
+			<sequence>
+				<element name="titulo" type="string" />
+				<element name="descripcion" type="string" minOccurs="0" maxOccurs="1" />
+				<element name="profesor" type="string" />
+				<element name="email" type="tns:tipoEmail" minOccurs="0" maxOccurs="1" />
+				<element name="agenda" type="tns:tipoAgenda" minOccurs="1" maxOccurs="unbounded" />
+			</sequence>
+			<attribute name="id" type="string" use="required" />
+		</complexType>
+	</element>
+
+	<complexType name="tipoAgenda">
+		<sequence>
+			<element name="fecha" type="date" />
+			<element name="turno" type="tns:tipoTurno" minOccurs="1"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="tipoTurno">
+		<sequence>
+			<element name="horario" type="string" />
+			<element name="reserva" type="tns:tipoReserva" minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="tipoReserva">
+		<sequence>
+			<element name="alumno" type="string" />
+			<element name="email" type="tns:tipoEmail" minOccurs="0" />
+		</sequence>
+	</complexType>
+	
+	<simpleType name="tipoEmail">
+		<restriction base="string">
+			<pattern value="[^@]+@[^\.]+\..+" />
+		</restriction>
+	</simpleType>
+
+
+</schema>
