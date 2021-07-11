@@ -1,0 +1,34 @@
+mutation {
+  votar(id:"60de3a74566b7c2d9c0bb450", opcion:1, usuario: "pablo.ceg@um.es")
+}
+mutation {
+  crearEncuesta(titulo:"Titulo Prueba")
+}
+mutation {
+  borrarEncuesta(id:"60de47a1566b7c3840daa238")
+}
+
+
+{
+  findById(id: "60de3a74566b7c2d9c0bb450") {
+    id
+    titulo
+    fechaApertura
+    opciones{
+      texto
+      votos
+    }
+  }  
+}
+{
+  haVotado(id: "60de3a74566b7c2d9c0bb450", usuario: "pablo.cegarrat@um.es")   
+}
+{
+  listadoResumen{
+    encuestas{
+      id
+    } 
+}
+
+  
+

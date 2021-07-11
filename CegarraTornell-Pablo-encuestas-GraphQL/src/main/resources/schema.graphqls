@@ -1,0 +1,40 @@
+type Encuesta {
+  id: String!
+  titulo: String!
+  instrucciones: String
+  fechaApertura: String
+  fechaCierre: String
+  opciones: [Opcion]
+}
+
+type Opcion {
+  texto: String!
+  votos: [String]
+}
+
+type EncuestaResumen {
+  id: String!
+  titulo: String!
+}
+
+type ListadoEncuestas {
+  encuestas: [EncuestaResumen]
+}
+
+type Query {
+	findById(id: String!): Encuesta
+	listadoResumen: ListadoEncuestas
+	haVotado(id: String!, usuario: String!): Boolean
+}
+
+type Mutation {
+  crearEncuesta(titulo: String!): String
+  borrarEncuesta(id: String!): String
+  votar(id: String!, opcion: Int!, usuario: String!): String
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}
+
